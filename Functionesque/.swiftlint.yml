@@ -1,0 +1,9 @@
+
+#https://github.com/realm/SwiftLint
+disabled_rules: # rule identifiers to exclude from running
+- identifier_name
+- trailing_whitespace
+opt_in_rules: # some rules are only opt-in
+#- empty_count
+# Find all the available rules by running:
+# swiftlint rules
