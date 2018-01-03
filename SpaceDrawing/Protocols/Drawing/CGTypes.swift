@@ -1,10 +1,10 @@
 import CoreGraphics
 
 public typealias LineCap = CGLineCap
-//public typealias LineJoin = CGLineJoin
+public typealias LineJoin = CGLineJoin
 public typealias FillRule = CGPathFillRule
 
-
+/*
  enum LineJoin<Space : DrawSpace> {
  ///A join with a sharp (angled) corner.
  ///Core Graphics draws the outer sides of the lines beyond the endpoint of the path, until they meet.
@@ -14,8 +14,4 @@ public typealias FillRule = CGPathFillRule
  case miter(limit : Space.LinearDsplacement)
  case round
  case bevel
-
- static func CGDefaultMiter() -> LineJoin {
- 	return miter(10)
- }
  }// */
