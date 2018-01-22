@@ -6,8 +6,14 @@
 //  Copyright © 2017 Dante Broggi. All rights reserved.
 //
 
+public protocol PartialAdditive {
+    associatedtype Stride
+    static func + (lhs: Self, rhs: Self) -> Self?
+}
+
 public protocol Additive: PartialAdditive {
-    associatedtype Adder: Operator = AnyOperator<Self>
+//    associatedtype Stride
+    associatedtype Adder: Operator
     static var adder: Adder { get }
 
     /// Adds two values and produces their sum.
@@ -31,7 +37,7 @@ public protocol Additive: PartialAdditive {
     ///   - lhs: The first value to add.
     ///   - rhs: The second value to add.
     static func + (lhs: Self, rhs: Self) -> Self
-    
+
     /// Adds two values and stores the result in the left-hand-side variable.
     ///
     /// - Parameters:

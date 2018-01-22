@@ -6,19 +6,19 @@
 //  Copyright © 2017 Dante Broggi. All rights reserved.
 //
 
-public protocol PsudoAdditive {
+public protocol PartialStrideAdditive {
     associatedtype Stride
     static func + (lhs: Self, rhs: Stride) -> Self?
 }
 
-public protocol PartialAdditive: PsudoAdditive {
+public protocol StrideAdditive: PartialStrideAdditive {
 //    associatedtype Stride
     associatedtype Adder: LeftOperator where Adder.Right == Stride
     static var adder: Adder { get }
     static func + (lhs: Self, rhs: Stride) -> Self
 }
 
-extension PartialAdditive {
+extension PartialStrideAdditive {
     public static func + (lhs: Self, rhs: Stride) -> Self? {
         return (lhs + rhs as Self)
     }
