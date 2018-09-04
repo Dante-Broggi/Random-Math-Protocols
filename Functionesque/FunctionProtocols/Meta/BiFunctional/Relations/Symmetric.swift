@@ -11,3 +11,6 @@ public protocol Symmetric: Relation/*, Commutative*/ {}
 
 /// xRy and yRx together imply that x=y.
 public protocol AntiSymmetric: Relation {}
+
+// TO ADD:
+// https://en.wikipedia.org/wiki/Symplectic_vector_space
